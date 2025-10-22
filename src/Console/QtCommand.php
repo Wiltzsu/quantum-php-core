@@ -77,6 +77,7 @@ abstract class QtCommand extends Command implements CommandInterface
     public function __construct()
     {
         parent::__construct($this->name);
+        var_dump("TESTING: QtCommand constructor - " . $this->name);
 
         $this->setDescription($this->description);
 
