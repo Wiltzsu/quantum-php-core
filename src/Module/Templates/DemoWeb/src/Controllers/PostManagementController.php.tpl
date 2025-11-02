@@ -15,7 +15,7 @@
 namespace {{MODULE_NAMESPACE}}\Controllers;
 
 use Quantum\Service\Factories\ServiceFactory;
-use {{MODULE_NAMESPACE}}\PostService;
+use {{MODULE_NAMESPACE}}\Services\PostService;
 use Quantum\Http\Response;
 use Quantum\Http\Request;
 
@@ -89,7 +89,6 @@ class PostManagementController extends BaseController
             'title' => $request->get('title', null, true),
             'content' => $request->get('content', null, true),
             'image' => '',
-            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         if ($request->hasFile('image')) {
@@ -140,7 +139,6 @@ class PostManagementController extends BaseController
         $postData = [
             'title' => $request->get('title', null, true),
             'content' => $request->get('content', null, true),
-            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         $post = $this->postService->getPost($postUuid);
